@@ -1,0 +1,91 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #f9f9f9; /* Light gray background */
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Text shadow for emphasis */
+}
+
+.board {
+  border: 2px solid #ccc;
+  height: 220px;
+  width: 540px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: #fff; /* White background */
+  border-radius: 20px; /* Rounded corners for the board */
+  padding: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+#subroutineboard {
+  height: 110px;
+}
+
+#menuboard {
+  height: 110px;
+
+}
+
+#instructions {
+  border: 2px solid #ccc;
+  flex-wrap: wrap;
+  display: flex;
+  align-content: flex-start;
+  height: 540px;
+  width: 110px;
+  margin: 20px auto;
+  padding: 20px;
+  float: left;
+}
+
+.instruction {
+  background-color: #ffcc66; /* Light orange background */
+  border: 1px solid #ccc;
+  padding: 20px; /* Increased padding for larger boxes */
+  margin: 15px; /* Increased margin for spacing */
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.instruction i {
+  font-size: 36px; /* Increased icon size */
+}
+
+.instruction:hover {
+  background-color: #ff9933; /* Orange background on hover */
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  background-color: #ff6699; /* Pink background */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 20px;
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+button:hover {
+  background-color: #ff3366; /* Darker pink background on hover */
+}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robot Instructions Board</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CDN -->
+</head>
+<body>
+  <div class="container" id="complete-board">
+    
+    
+    <div id="instructions">
+      <div class="instruction" draggable="true"><i class="fas fa-arrow-circle-up"></i></div> <!-- Move Forward -->
+      <div class="instruction" draggable="true"><i class="fas fa-arrow-circle-left"></i></div> <!-- Turn Left -->
+      <div class="instruction" draggable="true"><i class="fas fa-arrow-circle-right"></i></div> <!-- Turn Right -->
+      <div class="instruction" draggable="true"><i class="fas fa-arrow-circle-down"></i></div> <!-- Move Backward -->
+      <div class="instruction" draggable="true"><i class="fas fa-cat"></i></div> <!-- Call subroutine -->
+    </div>
+    <div class="buttons">
+      <button id="clear"><i class="fas fa-ghost" style="font-size:48px" ></i></button>
+      <button id="execute"><i class="fas fa-robot" style="font-size:48px" ></i></button>
+    </div>
+    <div id="mainboard" class="board">
+      <!-- Placeholder for robot instructions -->
+    </div>
+    <i class="fas fa-cat" style="font-size:48px"></i>
+    <div id="subroutineboard" class="board">
+      <!-- Placeholder for robot instructions -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
