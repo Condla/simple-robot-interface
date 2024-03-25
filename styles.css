@@ -33,10 +33,6 @@ h1 {
   height: 110px;
 }
 
-#menuboard {
-  height: 110px;
-
-}
 
 #instructions {
   border: 2px solid #ccc;
@@ -48,6 +44,24 @@ h1 {
   margin: 20px auto;
   padding: 20px;
   float: left;
+}
+
+
+.placeholder {
+  width: 75px;
+  height: 75px;
+  background-color: #ffccaa; /* Light orange background */
+  border: 1px solid #ccc;
+  margin: 15px; /* Increased margin for spacing */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.placeholder  .instruction{
+  margin:0px;
+  padding:20px;
+  align: center;
 }
 
 .instruction {

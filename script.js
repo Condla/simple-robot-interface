@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const instructions = document.querySelectorAll('.instruction');
+  const placeholders = document.querySelectorAll('.placeholder');
   const mainboard = document.getElementById('mainboard');
   const subroutineboard = document.getElementById('subroutineboard');
   const clearButton = document.getElementById('clear');
@@ -8,13 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
   instructions.forEach(instruction => {
     instruction.addEventListener('dragstart', dragStart);
   });
+  placeholders.forEach(placeholder => {
+    placeholder.addEventListener('dragover', dragOver);
+    placeholder.addEventListener('drop', drop);
+    placeholder.addEventListener('click', remove);
+  });
 
-  mainboard.addEventListener('dragover', dragOver);
-  mainboard.addEventListener('drop', drop);
-  //mainboard.addEventListener('dragleave', dragLeave);
-  subroutineboard.addEventListener('dragover', dragOver);
-  subroutineboard.addEventListener('drop', drop);
-  //subroutineboard.addEventListener('dragleave', dragLeave);
   clearButton.addEventListener('click', clearCommands);
   executeButton.addEventListener('click', executeCommands);
 });
@@ -32,49 +32,38 @@ function drop(event) {
   event.preventDefault();
   // Get the HTML content from the dragged element
   const data = event.dataTransfer.getData('text/html');
-  console.log(event);
-  console.log(data);
   const instruction = document.createElement('div');
   // Set the innerHTML of the new element to the HTML content retrieved from the dragged element
   instruction.innerHTML = data;
   // Add necessary classes and attributes to the new element
   instruction.classList.add('instruction');
-  console.log(event.target.id);
-  if (event.target.id === 'mainboard') {
+  if (event.currentTarget.id.includes('main-placeholder')) {
     instruction.classList.add('main-board-instruction');
   }
-  if (event.target.id === 'subroutineboard') {
+  if (event.currentTarget.id.includes('sub-placeholder')) {
     instruction.classList.add('sub-routine-board-instruction');
   }
-  //instruction.setAttribute('draggable', 'true');
+  instruction.setAttribute('draggable', 'true');
+  instruction.addEventListener('dragstart', dragStart);
   // Append the new element to the board
-  if (event.target.id === 'mainboard' || event.target.id === 'subroutineboard'){
-    event.target.appendChild(instruction);
+  if (event.currentTarget.id.includes('placeholder')){
+    event.currentTarget.innerHTML = '';
+    event.currentTarget.appendChild(instruction);
   }
+  
 }
 
-function dragLeave(event) {
-  if (event.target === document.getElementById('mainboard')) {
-    console.log(event);
-    console.log(event.relatedTarget);
-    console.log(document.getElementById('complete-board'));
-    console.log("bla");
-    console.log(event.dataTransfer);
-    const data = event.dataTransfer.getData('text/html');
-    console.log(data);
-    console.log(event.target.classList);
-    if (event.relatedTarget === document.getElementById('complete-board')) {
-      const draggedInstruction = document.querySelector('.instruction');
-      draggedInstruction.remove();
-    }
-  }
+function remove(event) {
+  event.preventDefault();
+  console.log(event.currentTarget);
+  event.currentTarget.innerHTML = '';
 }
 
 function clearCommands() {
-  const mainboard = document.getElementById('mainboard');
-  mainboard.innerHTML = ''; // Remove all child elements from the board
-  const subroutineboard = document.getElementById('subroutineboard');
-  subroutineboard.innerHTML = ''; // Remove all child elements from the board
+  const placeholders = document.querySelectorAll('.placeholder');
+  placeholders.forEach(placeholder => {
+    placeholder.innerHTML = ''; // Remove all child elements from the board
+  });
 }
 
 function evaluate_board(instructionsHtml) {
