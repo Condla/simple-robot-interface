@@ -1,32 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from time import sleep
-import asyncio
-
-class Robot:
-
-  def __init__(self, left, right):
-    self.left = left
-    self.right = right
-
-  def forward(self):
-    print("going forward")
-
-
-  def turn_right(self):
-    print("turning right")
-
-
-  def turn_left(self):
-    print ("turning left")
-
-
-  def backward(self):
-    print("going backward")
-
-
-  def stop(self):
-    print("stopping")
+from robotdummy import Robot
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -40,7 +15,6 @@ def execute():
     print('Received sub routine board instructions:', sub_routine_board_instructions)
     execute(main_board_instructions, sub_routine_board_instructions)
     return jsonify({'message': 'Instructions executed successfully'}), 200
-
 
 def execute(main_board_instructions, sub_routine_board_instructions=[]):
     for instruction in main_board_instructions:

@@ -13,7 +13,6 @@ For this to work you need a robot powered by a raspberry pi. The robot interface
 ## Screenshots
 
 Interface before instructions are being given.
-[Duck Duck Go](https://duckduckgo.com)
 ![start interface](/img/start-interface.png)
 
 Interface with instructions drag'n'dropped to the board of instructions.
