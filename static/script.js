@@ -99,8 +99,8 @@ function executeCommands() {
   const requestBody = JSON.stringify({ mainBoardInstructions, subRoutineBoardInstructions});
   console.log(requestBody);
 
-  fetch('http://192.168.0.32:5000/execute', {
-  //fetch('/execute', {
+  //fetch('http://192.168.0.32:5000/execute', {
+  fetch('/execute', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
