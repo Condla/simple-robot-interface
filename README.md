@@ -5,7 +5,7 @@ A super simple interface to "program" a Raspberry Pi Zero powered stupid instruc
 
 * For this to work you need a robot powered by a Raspberry Pi (Raspberry Pi Zero W is just fine). The robot interface is currently mocked, but can seemlessly be exchanged by the Raspberry Pi GPIO Robot interface to go forward, turn into a direction (left, right) and go backward.
 
-* If you have older kids, you can use these instructions to build the robot yourself: [Robot Buggy Instructions]((https://projects.raspberrypi.org/en/projects/build-a-buggy/0))
+* If you have older kids, you can use these instructions to build the robot yourself: [Robot Buggy Instructions](https://projects.raspberrypi.org/en/projects/build-a-buggy/0)
 
 * Start serving the interface and the robot instruction follower on ```python app.py```.
 * Optional: Add the command above to your Raspberry Pi's rc.local file so the application starts up automatically, once you power up the Raspberry Pi.
