@@ -15,7 +15,7 @@ A super simple interface to "program" a Raspberry Pi Zero powered stupid instruc
 ![start interface](/img/start-interface.png)
 * Drag and drop instructions into the instructions box.
 ![interface](/img/interface.png)
-* Press the robot button to send commands to robot.
+* Press the robot button and confirm with `ok` to send commands to robot, which will start executing the programmed driving sequence immediately.
 * The cat command will cause the robot to run commands that are in the board below the cat symbol.
   * You can think of the cat board as a kind of subroutine.
   * Note: Putting a cat onto the cat board will cause an infinity loop
