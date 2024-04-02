@@ -5,8 +5,8 @@ from gpiozero import Robot
 #from robotdummy import Robot
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
-robot = Robot(right = (7,8), left = (10, 9))
+#CORS(app)  # Enable CORS for all routes
+robot = Robot(left = (7,8), right = (10, 9))
 
 @app.route('/execute', methods=['POST'])
 def execute():
@@ -29,11 +29,11 @@ def execute(main_board_instructions, sub_routine_board_instructions=[]):
         robot.stop()
       elif instruction == "turn right":
         robot.right()
-        sleep(0.25)
+        sleep(0.5)
         robot.stop()
       elif instruction == "turn left":
         robot.left()
-        sleep(0.25)
+        sleep(0.5)
         robot.stop()
       elif instruction == "cat":
         execute(sub_routine_board_instructions, sub_routine_board_instructions)
