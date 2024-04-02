@@ -1,11 +1,9 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 from time import sleep
 from gpiozero import Robot
 #from robotdummy import Robot
 
 app = Flask(__name__)
-#CORS(app)  # Enable CORS for all routes
 robot = Robot(left = (7,8), right = (10, 9))
 
 @app.route('/execute', methods=['POST'])
